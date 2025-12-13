@@ -1,11 +1,15 @@
-from stats import word_count
+from stats import word_count, character_count
 
 def get_book_text():
     with open("books/frankenstein.txt") as f:
-        file_contents = f.read()
-    print(file_contents)
+        return f.read()
 
 def main():
-    get_book_text()
+    text = get_book_text()
+    word_result = word_count(text)
+    print(word_result)
 
-word_count()
+    char_result = character_count(text)
+    print(char_result)
+
+main()

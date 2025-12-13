@@ -1,9 +1,17 @@
-def word_count():
+def word_count(text):
     total_words = 0
-    with open("books/frankenstein.txt") as f:
-        file_contents = f.read()
-    words = file_contents.split()
+    words = text.split()
     for word in words:
         total_words += 1
     total_word_count = f"Found {total_words} total words"
-    print(total_word_count)
+    return total_word_count
+
+def character_count(text):
+    characters = {}
+    lower_case = text.lower()
+    for character in lower_case:
+        if character in characters:
+            characters[character] += 1
+        else:
+            characters[character] = 1
+    return characters
